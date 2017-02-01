@@ -5,10 +5,16 @@ angular.module('cargue').controller("cargueController" , function($scope, cargue
 	     
 	      cargueService.loadingFile(file)	
 	        .success(function (data, status) {
-	        		alert("Archivo cargado exitosamente...");
+	        	
+	        		swal('Buen Trabajo...',
+	   	        		 'Archivo cargado exitosamente...',
+	   	        		 'success');
 
 	        }).error(function (error, status, headers) {
-	        	alert("Existe un problema al cargar el archivo..." + headers("ERR_DESC"));
+	        	
+	        	swal('Oops...',
+	        		 'Existe un problema al cargar el archivo...' + headers("ERR_DESC"),
+	        		 'error');
 	        });
 
 	    };
