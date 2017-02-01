@@ -21,7 +21,8 @@ import co.com.techandsolve.cargueperezoso.utilidades.procesamientoarchivo.FileMa
 @Path("/file")
 public class ArchivoServices {
 	
-	FileManager uploadFile = new FileManager();
+	
+	private FileManager uploadFile=new FileManager();
 	private CalculoCarga calculoCarga=new CalculoCarga();
 	private Archivo archivo=new Archivo();
 
