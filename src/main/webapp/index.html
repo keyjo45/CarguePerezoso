@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="cargue">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tienda Virtual">
+<meta name="author" content="Yosimar Valega De la Hoz">
+<title>Bienvenido a Carga Perezosa</title>
+<link rel="icon" type="images/png" href="app/images/shop.png" >
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" >
+<link rel="stylesheet" href="app/styles/validaciones.css" >
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="app/styles/freelancer.min.css" rel="stylesheet">
+<link href="app/styles/main.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
+</head>
+<body>
+
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom row">
+          <div class="container">
+              <div class="navbar-header page-scroll">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                  </button>
+                  <img src="app/images/shop.png" class="navbar-brand img-responsive" alt=""><a class="navbar-brand" href="#/" >CARGA PEREZOSA</a>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="hidden">
+                          <a href="#page-top"></a>
+                      </li>
+                       <li class="dropdown ">
+      					<a id="archivo" class="dropdown-toggle " data-toggle="dropdown" >Archivo<span class="caret"></span></a>
+      							<ul class="dropdown-menu fondo">
+        							<li class="page-scroll "><a class="color-anchor" href="#cargarArchivo">Cargar Archivo</a></li>
+        						</ul>
+    					</li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+<div ng-view="" ></div>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="app/modules/cargue_app.js"></script>
+<script src="bower_components/angular/angular-css.min.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app/services/cargue_archivo.js"></script>
+<script src="app/controllers/cargue_controller.js"></script>
+<script src="app/js/validaciones.js"></script>
+<script src="bower_components/jquery/dist/jquery-1.11.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

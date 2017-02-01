@@ -1,0 +1,22 @@
+<head>
+<meta charset="utf-8">
+</head>
+<div class="row">
+<div class="col-md-12"><br><br><br><br><br></div>
+<div class="col-md-4"></div>
+<div class="col-md-6">
+<h1 class="text-center">Archivo a Cargar</h1>
+<div ng-controller="productController">
+<form name="formproduct" novalidate>
+  <div class="form-group">
+    <label for="nombre">Seleccione el Archivo <b class="obligatorio"> * </b></label>
+    <input type="file" id="archivoPerezoso"	required>
+  </div>
+   <div class="form-group text-center">
+    <button type="button" name="btnGuardar" id="btnGuardar" class="btn btn-success" ng-disabled="formproduct.$invalid" ng-style="disableElements"  ng-click="uploadFile();">Cargar Archivo</button>
+  </div>
+  </form>
+</div>
+</div>
+<div class="col-md-5"></div>
+</div>
