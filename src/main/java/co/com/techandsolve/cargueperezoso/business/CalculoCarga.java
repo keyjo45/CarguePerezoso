@@ -14,14 +14,13 @@ public class CalculoCarga {
 	
 	private Validaciones validacion=new Validaciones();
 	private Archivo archivo=new Archivo();
-	private int diasTrabajado; 
-	private int[] datos;
+	
 	private int viajesTotales;
 	
 	public void calcularCargue(List<Integer> listaACalcular) throws ValidacionException, ReadingTextException, IOException{
-		
-		diasTrabajado=listaACalcular.get(0);
-		datos=new int[listaACalcular.size()];
+				
+		int diasTrabajado=listaACalcular.get(0);
+		int[]datos=new int[listaACalcular.size()];
 		
 		if(validacion.validarDiasTrabajados(diasTrabajado)){
 			datos=asignarArreglo(listaACalcular);
@@ -47,7 +46,8 @@ public class CalculoCarga {
 	public List<Integer> calcularViajesRealizados(int [] datos) throws ValidacionException{
 		
 		List<Integer> listaResultado=new ArrayList<>();
-		int i=1; int indiceDatos=1;
+		int i=1; 
+		int indiceDatos=1;
 		
 		while(i<=datos.length-1){
 			if(validacion.validarElementos(datos[i])){
