@@ -1,5 +1,6 @@
 package co.com.techandsolve.cargueperezoso.business;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class CalculoCarga {
 	private int[] datos;
 	private int viajesTotales;
 	
-	public void calcularCargue(List<Integer> listaACalcular) throws ValidacionException, ReadingTextException{
+	public void calcularCargue(List<Integer> listaACalcular) throws ValidacionException, ReadingTextException, IOException{
 		
 		diasTrabajado=listaACalcular.get(0);
 		datos=new int[listaACalcular.size()];

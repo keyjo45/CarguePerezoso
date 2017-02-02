@@ -2,6 +2,8 @@ package co.com.techandsolve.cargueperezoso.business;
 
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class ArchivoTest {
 	private Archivo archivo=new Archivo();
 	
 	@Test
-	public void debeProcesarArchivo() throws ReadingTextException{
+	public void debeProcesarArchivo() throws ReadingTextException, FileNotFoundException{
 		int diasTrabajados=5;
 		String fileLocation="src/test/resources/co/com/techandsolve/cargueperezoso/archivo/lazy_loading_example_input.txt";
 		
@@ -29,7 +31,7 @@ public class ArchivoTest {
 	}
 
 	@Test
-	public void debeGenerarArchivo() throws ReadingTextException{
+	public void debeGenerarArchivo() throws ReadingTextException, IOException{
 		
 		String rutaDestino=System.getenv("RUTA_ARCHIVO_SALIDA");
 		String nombreArchivo="lazy_loading_example_output.txt";
