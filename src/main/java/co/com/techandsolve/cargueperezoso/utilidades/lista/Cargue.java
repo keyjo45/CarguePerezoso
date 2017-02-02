@@ -2,7 +2,7 @@ package co.com.techandsolve.cargueperezoso.utilidades.lista;
 
 public class Cargue {
 	
-	public Cargue(){
+	private Cargue(){
 		
 	}
 	
