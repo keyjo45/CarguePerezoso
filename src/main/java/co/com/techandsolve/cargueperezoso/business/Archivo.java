@@ -25,18 +25,12 @@ public class Archivo {
 	         while((linea=buffer.readLine())!=null){
 	        	 lstFilas.add(Integer.parseInt(linea));
 	         }
+	         if( null != archivoALeer ){   
+	            	archivoALeer.close();     
+	            }
 	      }catch(Exception e){
 	         throw new ReadingTextException(e, "Error al llenar lista ");
 	     	
-	      }finally{
-	         try{                    
-	            if( null != archivoALeer ){   
-	            	archivoALeer.close();     
-	            }                  
-	         }catch (Exception e2){ 
-	        	 throw new ReadingTextException(e2, "Error al cerrar el archivo...");
-	 	     	
-	         }
 	      }
 		return lstFilas;
 	}
@@ -53,17 +47,14 @@ public class Archivo {
             	caso=i+1;
                 pw.println("Case #"+caso+ ": "+resultado.get(i));
             }
+            
+            if (null != fichero){
+                fichero.close();
+             } 
 
         } catch (Exception e) {
             throw new ReadingTextException(e, "Error al escribir dato de salida");
-        } finally {
-           try {
-           if (null != fichero)
-              fichero.close();
-           } catch (Exception e2) {
-              throw new ReadingTextException(e2, "Error al crear el archivo...");
-           }
-        }
+        } 
 		
 	}
 	
