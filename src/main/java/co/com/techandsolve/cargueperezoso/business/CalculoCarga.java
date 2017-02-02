@@ -33,7 +33,7 @@ public class CalculoCarga {
 			}
 		}else{
 			throw new ValidacionException("Los dias trabajados no son los correctos");
-		};
+		}
 	}
 	
 	public int [] asignarArreglo(List<Integer> lista){

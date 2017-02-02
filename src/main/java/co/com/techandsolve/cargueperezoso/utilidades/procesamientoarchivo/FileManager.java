@@ -26,7 +26,6 @@ public class FileManager {
 			out.flush();
 			return file;
 		} catch (IOException ex) {
-			ex.printStackTrace();
 			throw new ReadingTextException(ex, "Error escribiendo archivo en la ruta " + fileLocation);
 		}
 	}
