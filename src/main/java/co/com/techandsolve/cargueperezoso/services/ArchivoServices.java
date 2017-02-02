@@ -32,9 +32,9 @@ public class ArchivoServices {
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	public void recibirArchivo(IMultipartBody multipartBody)throws ReadingTextException, ValidacionException{
 		try {
-			List<Integer> listArchivo=new ArrayList<>();
+			
 			File file=uploadFile.uploadFile(multipartBody.getAllAttachments().get(0).getDataHandler().getInputStream());
-			listArchivo=archivo.procesarArchivo(file);
+			List<Integer> listArchivo=archivo.procesarArchivo(file);
 						
 			if(!listArchivo.isEmpty()){
 				calculoCarga.calcularCargue(listArchivo);
