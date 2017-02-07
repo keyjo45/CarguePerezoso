@@ -6,10 +6,10 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-public class AppExceptionMapper implements ExceptionMapper<ReadingTextException>{
+public class AppExceptionMapper implements ExceptionMapper<Exception>{
 
 	@Override
-	public Response toResponse(ReadingTextException excepcion) {
+	public Response toResponse(Exception excepcion) {
 		
 		return Response.status(Status.INTERNAL_SERVER_ERROR).header("ERR_DESC", excepcion.getMessage()).build();
 	}

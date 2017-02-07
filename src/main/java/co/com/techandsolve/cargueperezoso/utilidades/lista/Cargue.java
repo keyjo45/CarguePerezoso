@@ -6,17 +6,17 @@ public class Cargue {
 		
 	}
 	
-	public static int[] ordenarArreglo(int[] n) {
-	    int aux;
-	    for (int i = 0; i < n.length - 1; i++) {
-	        for (int x = i + 1; x < n.length; x++) {
-	            if (n[x] > n[i]) {
-	                aux = n[i];
-	                n[i] = n[x];
-	                n[x] = aux;
+	public static int[] ordenarArreglo(int[] arreglo) {
+	    int auxiliar;
+	    for (int i = 0; i < arreglo.length - 1; i++) {
+	        for (int x = i + 1; x < arreglo.length; x++) {
+	            if (arreglo[x] > arreglo[i]) {
+	                auxiliar = arreglo[i];
+	                arreglo[i] = arreglo[x];
+	                arreglo[x] = auxiliar;
 	            }
 	        }
 	    }
-	    return n;
+	    return arreglo;
 	}
 }

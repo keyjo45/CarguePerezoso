@@ -1,7 +1,6 @@
 package co.com.techandsolve.cargueperezoso.services;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -20,27 +19,28 @@ import co.com.techandsolve.cargueperezoso.utilidades.procesamientoarchivo.FileMa
 
 @Path("/file")
 public class ArchivoServices {
-	
-	
-	private FileManager uploadFile=new FileManager();
-	private CalculoCarga calculoCarga=new CalculoCarga();
-	private Archivo archivo=new Archivo();
+
+	private FileManager uploadFile = new FileManager();
+	private CalculoCarga calculoCarga = new CalculoCarga();
+	private Archivo archivo = new Archivo();
 
 	@POST
 	@Path("/loadingFile/")
 	@Produces(MediaType.TEXT_PLAIN)
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	public void recibirArchivo(IMultipartBody multipartBody)throws ReadingTextException, ValidacionException{
+	public void recibirArchivo(IMultipartBody multipartBody) throws ReadingTextException, ValidacionException {
 		try {
-			
-			File file=uploadFile.uploadFile(multipartBody.getAllAttachments().get(0).getDataHandler().getInputStream());
-			List<Integer> listArchivo=archivo.procesarArchivo(file);
-						
-			if(!listArchivo.isEmpty()){
+
+			File file = uploadFile
+					.uploadFile(multipartBody.getAllAttachments().get(0).getDataHandler().getInputStream());
+			List<Integer> listArchivo = archivo.procesarArchivo(file);
+
+			if (!listArchivo.isEmpty()) {
 				calculoCarga.calcularCargue(listArchivo);
 			}
 		} catch (Exception e) {
-			throw new ReadingTextException(e, "Error al leer el archivo o el archivo esta vacio. Revise que la extension sea .txt ");
+			throw new ReadingTextException(e,
+					"Error al leer el archivo o el archivo esta vacio. Revise que la extension sea .txt ");
 		}
 	}
 
